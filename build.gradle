@@ -1,0 +1,36 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.1'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'exchange.order.book'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+	implementation 'junit:junit:4.12'
+	runtimeOnly 'com.h2database:h2'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.0'
+	implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-jersey', version: '2.4.4'
+	// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations
+	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.0.1'
+
+	testImplementation(
+			'junit:junit:4.12',
+			'org.junit.jupiter:junit-jupiter-api:5.4.2'
+	)
+
+}
+
+test {
+	useJUnitPlatform()
+}
